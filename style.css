@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(#00abf0, #081b29 );
+    color: #ededed;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 25px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 600;
+}
+.navbar a{
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .8s;
+}
+.navbar a:hover, 
+.navbar a.active{
+    color: rgb(31, 42, 104);  
+    animation-direction: inherit;
+}
+.home{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+
+}
+.home-img{
+    border-radius: 90vh;
+    image-resolution: 1800px;
+    perspective: 10vh;
+}
+.home-content{
+    max-width: 600px;
+}
+.home-content h1{
+    font-size: 56px;
+    font-weight: 700;
+}
+.home-content h3{
+    font-size: 32px;
+    font-weight: 700;
+    color: #00abf0;
+}
+.home-content p{
+    font-size: 16px;
+    margin: 20px 0 40px;
+    line-height: 1.2;
+}
+.home-content .btn-box{
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    height: 50px;
+}
+.btn-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: #081b29;
+    border: 2px solid #00abf0;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 19px;
+    color: #00abf0;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: color 0.5s, background 0.5s, border-color 0.5s;
+}
+
+.btn-box a:nth-child(1)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    color: #00abf0;
+    z-index: -1;
+    transition: width 0.8s;
+}
+.btn-box a:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00abf0;
+    color: #081b29;
+    z-index: -1;
+    transition: width 0.8s;
+}
+.btn-box a:nth-child(1)::before {
+    width: 100%;
+}
+
+.btn-box a:nth-child(2)::before {
+    width: 0;
+}
+
+.btn-box a:nth-child(1):hover::before {
+    width: 0;
+}
+
+.btn-box a:nth-child(1):hover {
+    color: #081b29;
+    background: #00abf0;
+    border-color: #00abf0;
+}
+
+.btn-box a:nth-child(2):hover::before {
+    width: 100%;
+}
+
+.btn-box a:nth-child(2):hover {
+    color: #081b29;
+    background: #00abf0 ;
+    border-color: #00abf0;
+}
+
+.home-sci {
+    position: absolute;
+    width: 170px;
+    bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+.home-sci a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #00abf0;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+.home-sci a:hover{
+    color: #081b29;
+
+}
+.home-sci a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #00abf0;
+    z-index: -1;    
+    transition: .5s;
+}
+.home-sci a:hover::before{
+    width: 100%;
+
+}
+
+@media (max-width: 790px) {
+    .header {
+        padding: 20px 5%;
+    }
+
+    .navbar a {
+        font-size: 12px;
+        margin-left: 8px;
+    }
+
+    .home-content h1 {
+        font-size: 40px;
+    }
+
+    .home-content h3 {
+        font-size: 24px;
+    }
+
+    .home-content p {
+        font-size: 14px;
+    }
+
+    .btn-box {
+        flex-direction: column;
+        width: 100%;
+        display: flex;
+    }
+
+    .btn-box a {
+        position: relative;
+        margin-bottom: 1px;
+        width: 90%;
+        font-size: 2vh;
+    }
+
+    .home-sci {
+        bottom: 20px;
+        width: 150px;
+    }
+}
+.container {
+    margin-top: 10vh;
+    max-width: 1200px; /* Lebar maksimal kontainer */
+    margin: 80px auto; /* Jarak atas dan bawah, otomatis ke tengah */
+    padding: 20px; /* Ruang di dalam kontainer */
+    text-align: center; /* Teks di tengah */
+    background-color: rgba(255, 255, 255, 0.1); /* Latar belakang transparan */
+    border-radius: 10px; /* Sudut yang melengkung */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Bayangan */
+}
+
+.section-title {
+    font-size: 28px; /* Ukuran font untuk judul */
+    font-weight: 700; /* Ketebalan font */
+    color: #00abf0; /* Warna judul */
+    margin-bottom: 40px; /* Jarak bawah judul */
+}
+
+.wrapper {
+    display: flex; /* Menggunakan flexbox */
+    flex-wrap: wrap; /* Membungkus elemen */
+    justify-content: center; /* Rata tengah */
+    gap: 20px; /* Jarak antar kartu */
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.2); /* Warna latar belakang kartu */
+    border-radius: 10px; /* Sudut melengkung */
+    padding: 20px; /* Ruang dalam kartu */
+    transition: transform 0.3s; /* Transisi saat hover */
+    width: 250px; /* Lebar kartu */
+    backdrop-filter: blur(5px); /* Efek blur */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Efek mengangkat saat hover */
+}
+
+.title {
+    font-size: 24px; /* Ukuran font untuk judul kartu */
+    margin: 10px 0; /* Jarak atas dan bawah judul kartu */
+}
+
+.icons {
+    font-size: 40px; /* Ukuran ikon */
+    margin: 10px 0; /* Jarak atas dan bawah ikon */
+    color: #00abf0; /* Warna ikon */
+}
+
+.description {
+    font-size: 16px; /* Ukuran font untuk deskripsi */
+    margin: 10px 0; /* Jarak atas dan bawah deskripsi */
+}
+
+.btn {
+    margin-top: 10px; /* Jarak atas untuk tombol */
+}
+
+.btn a {
+    display: inline-block; /* Mengatur tombol agar inline-block */
+    padding: 10px 20px; /* Ruang dalam tombol */
+    border: 2px solid #00abf0; /* Garis tepi tombol */
+    border-radius: 5px; /* Sudut melengkung tombol */
+    color: #00abf0; /* Warna teks tombol */
+    text-decoration: none; /* Menghapus garis bawah */
+    transition: background-color 0.3s, color 0.3s; /* Transisi untuk hover */
+}
+
+.btn a:hover {
+    background-color: #00abf0; /* Latar belakang saat hover */
+    color: #081b29; /* Warna teks saat hover */
+}
